@@ -36,12 +36,12 @@ public class SearchInputView extends AppCompatActivity {
 
     private void requestLocationPermission() {
         if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // 権限が許可されていない場合、ユーザーに許可を求めます
+            // 権限が許可されていない場合、ユーザーに許可を求める
             ActivityCompat.requestPermissions(this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                     LOCATION_PERMISSION_REQUEST_CODE);
         } else {
-            // 権限が既に許可されている場合、位置情報取得に進みます
+            // 権限が既に許可されている場合、位置情報取得に進む
             getLastLocation();
         }
     }
@@ -60,12 +60,12 @@ public class SearchInputView extends AppCompatActivity {
         }
     }
 
-    @SuppressLint("MissingPermission") // 権限チェックは別で行っているため抑制
+    @SuppressLint("MissingPermission")
     private void getLastLocation() {
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, location -> {
                     if (location != null) {
-                        // **🔥 ここで緯度・経度が取得できます！**
+                        // **緯度・経度取得**
                         double latitude = location.getLatitude();
                         double longitude = location.getLongitude();
 
@@ -74,7 +74,7 @@ public class SearchInputView extends AppCompatActivity {
 
                         // TODO: 取得した緯度・経度を使ってホットペッパーAPIを呼び出す処理へ進む
                     } else {
-                        // 位置情報が取得できない場合（GPSオフ、キャッシュなしなど）
+                        // 位置情報が取得できない場合
                         Toast.makeText(this, "現在地を取得できませんでした。設定を確認してください。", Toast.LENGTH_SHORT).show();
                     }
                 });
