@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SearchRestaurant</string>
+
+    <string-array name="radius_options">
+        <item>300m</item>
+        <item>500m</item>
+        <item>1000m (1km)</item>
+        <item>2000m (2km)</item>
+        <item>3000m (3km)</item>
+    </string-array>
 </resources>
