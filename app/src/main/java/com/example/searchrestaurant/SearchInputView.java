@@ -72,7 +72,6 @@ public class SearchInputView extends AppCompatActivity {
                         // 例: ログに出力
                         Log.d("Location", "緯度: " + latitude + ", 経度: " + longitude);
 
-                        // TODO: 取得した緯度・経度を使ってホットペッパーAPIを呼び出す処理へ進む
                     } else {
                         // 位置情報が取得できない場合
                         Toast.makeText(this, "現在地を取得できませんでした。設定を確認してください。", Toast.LENGTH_SHORT).show();
