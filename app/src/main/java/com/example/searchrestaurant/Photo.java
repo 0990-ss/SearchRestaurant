@@ -2,7 +2,7 @@ package com.example.searchrestaurant;
 
 public class Photo {
 
-    private Mobile movile;
+    private Mobile mobile;
 
-    public Mobile getMovile() { return movile; }
+    public Mobile getMobile() { return mobile; }
 }

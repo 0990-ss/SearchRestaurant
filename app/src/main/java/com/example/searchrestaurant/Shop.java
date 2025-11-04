@@ -6,10 +6,12 @@ public class Shop {
     private double lat;
     private double lng;
     private Photo photo;
+    private String access;
 
     public String getName() { return name; }
     public String getAddress() { return address; }
     public double getLat() { return lat; }
     public double getLng() { return lng; }
     public Photo getPhoto() { return photo; }
+    public String getAccess() { return access;}
 }

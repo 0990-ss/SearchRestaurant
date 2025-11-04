@@ -11,13 +11,12 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-import com.example.searchrestaurant.Shop;
 
-public class SearchResultView  extends AppCompatActivity implements ShopAdapter.OnItemClickListenerS {
+public class SearchResultView  extends AppCompatActivity implements ShopAdapter.OnItemClickListener {
 
     private RecyclerView recyclerView;
-    private List<Shop> shops;
     private Gson gson = new Gson();
+    private ShopAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +57,7 @@ public class SearchResultView  extends AppCompatActivity implements ShopAdapter.
     public void onItemClick(Shop shop) {
         // 店舗詳細画面（ShopDetailActivity）へ遷移
 
-        // TODO: ShopDetailActivityを先に作成する
-        Intent detailIntent = new Intent(SearchResultActivity.this, ShopDetailActivity.class);
+        Intent detailIntent = new Intent(SearchResultView.this, ShopDetailView.class);
 
         // 選択された店舗情報をJSONに戻して渡す
         String shopJson = gson.toJson(shop);
