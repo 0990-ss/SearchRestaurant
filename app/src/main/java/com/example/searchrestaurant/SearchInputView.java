@@ -137,7 +137,7 @@ public class SearchInputView extends AppCompatActivity {
                 android.location.Location location = locationResult.getLastLocation();
 
                 if (location != null) {
-                    // 1. 位置情報が取得できたら、すぐに更新を停止（重要！）
+                    // 1. 位置情報が取得できたら、すぐに更新を停止
                     fusedLocationClient.removeLocationUpdates(locationCallback);
 
                     // 2. 検索処理へ進む
