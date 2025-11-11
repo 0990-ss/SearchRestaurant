@@ -21,5 +21,11 @@ public interface ApiService {
             @Query("start") int start,
             // フォーマットはJSONを指定
             @Query("format") String format
+
+            //こだわり条件
+            /*@Query("lunch") String lunchFlag,         // "1" or null
+            @Query("private_room") String roomFlag,   // "1" or null
+            @Query("non_smoking") String smokeFlag,   // "1" or null
+            @Query("genre") String genreCode         // "G001" or null*/
     );
 }

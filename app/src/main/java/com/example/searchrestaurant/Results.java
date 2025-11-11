@@ -3,7 +3,7 @@ package com.example.searchrestaurant;
 import java.util.List;
 
 public class Results {
-    private List<Shop> shops;
+    private List<Shop> shop;
 
-    public List<Shop> getShops() { return shops; }
+    public List<Shop> getShop() { return shop; }
 }

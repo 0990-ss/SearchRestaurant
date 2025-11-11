@@ -7,13 +7,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide; // Glideのインポート
+import com.bumptech.glide.Glide;
 import java.util.List;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder>{
 
     private List<Shop> shopList;
-    private OnItemClickListener listener; // クリックリスナーのためのインターフェースを定義（後述）
+    private OnItemClickListener listener;
 
     public interface OnItemClickListener {
         void onItemClick(Shop shop);

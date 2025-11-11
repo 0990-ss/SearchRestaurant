@@ -38,20 +38,11 @@ public class ShopDetailView extends AppCompatActivity{
 
                 // 要件: UIにデータをセット
                 nameTv.setText(shop.getName());
-
-                // ホットペッパーAPIの仕様上、住所は "address"、営業時間は "open" に格納されていると仮定
                 addressTv.setText("住所: " + shop.getAddress());
+                openTimeTv.setText("営業時間: " + shop.getOpen());
 
-                // 営業時間 (APIの "open" キーに対応するゲッターがShopクラスに必要)
-                // HACK: 現状のShopクラスにはgetOpen()がないため、一時的に固定値を表示するか、
-                // Shopクラスに private String open; public String getOpen() { return open; } を追加してください。
-                // *今回は実装の簡略化のため、Shopクラスに "open" フィールドが存在すると仮定して進めます。
-                // openTimeTv.setText("営業時間: " + shop.getOpen());
-                openTimeTv.setText("営業時間: " + "データ未連携 (APIの'open'フィールドを利用)");
-
-                // アクセス情報（おまけ）
-                // accessTv.setText("アクセス: " + shop.getAccess()); // accessフィールドもAPIから取得可能
-                accessTv.setText("アクセス: " + "データ未連携 (APIの'access'フィールドを利用)");
+                // アクセス情報
+                accessTv.setText("アクセス: " + shop.getAccess());
 
                 // 店舗画像（大きいサイズ: mobile.l を使用）
                 if (shop.getPhoto() != null && shop.getPhoto().getMobile() != null && shop.getPhoto().getMobile().getL() != null) {
@@ -61,7 +52,7 @@ public class ShopDetailView extends AppCompatActivity{
                             .into(imageIv);
                 }
 
-                // *詳細画面にあるべき機能: 地図ボタンは一旦無効化のままです。
+                // *詳細画面にあるべき機能: 地図ボタンは一旦無効化のまま
 
             } else {
                 Toast.makeText(this, "店舗情報の解析に失敗しました。", Toast.LENGTH_LONG).show();

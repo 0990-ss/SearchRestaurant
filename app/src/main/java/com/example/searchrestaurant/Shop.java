@@ -7,11 +7,11 @@ public class Shop {
     private double lng;
     private Photo photo;
     private String access;
+    private String open;
 
     public String getName() { return name; }
     public String getAddress() { return address; }
-    public double getLat() { return lat; }
-    public double getLng() { return lng; }
     public Photo getPhoto() { return photo; }
     public String getAccess() { return access;}
+    public String getOpen() { return open; }
 }

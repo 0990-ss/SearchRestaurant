@@ -66,22 +66,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/spinner_radius" />
 
-    <Button
-        android:id="@+id/btn_toggle_filters"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/black"
-        android:text="こだわり条件 ∨"
-        android:textColor="@color/white"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_search"
-        app:strokeColor="@color/search_button_blue"
-        app:strokeWidth="1dp" />
-
+    <!--
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/filters_container"
         android:layout_width="0dp"
@@ -89,24 +74,70 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
-        android:visibility="gone"
+        android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_toggle_filters">
+        app:layout_constraintTop_toBottomOf="@id/btn_search">
 
-        <Button
-            android:id="@+id/btn_filter_sample"
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flow_filters"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:text="サンプル条件"
-            app:layout_constraintWidth_percent="0.5"
-            app:layout_constraintStart_toStartOf="parent"
+            app:constraint_referenced_ids="btn_lunch,btn_private_room,btn_non_smoking,btn_izakaya"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalStyle="packed"
+            app:flow_verticalGap="8dp"
+            app:flow_horizontalGap="8dp"
             app:layout_constraintTop_toTopOf="parent"
-            style="@style/Widget.AppCompat.Button.Colored"
-            android:backgroundTint="@color/white"
-            android:textColor="@color/black" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btn_lunch"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ランチ営業あり"
+            android:tag="false"
+            android:background="@drawable/bg_filter_normal"
+            android:textColor="@color/white"
+            android:onClick="onFilterButtonClicked" />
+
+        <Button
+            android:id="@+id/btn_private_room"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="個室あり"
+            android:tag="false"
+            android:background="@drawable/bg_filter_normal"
+            android:textColor="@color/search_button_blue"
+            android:onClick="onFilterButtonClicked" />
+
+        <Button
+            android:id="@+id/btn_non_smoking"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="禁煙"
+            android:tag="false"
+            android:background="@drawable/bg_filter_normal"
+            android:textColor="@color/search_button_blue"
+            android:onClick="onFilterButtonClicked" />
+
+        <Button
+            android:id="@+id/btn_izakaya"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="居酒屋"
+            android:tag="false"
+            android:background="@drawable/bg_filter_normal"
+            android:textColor="@color/search_button_blue"
+            android:onClick="onFilterButtonClicked" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+    -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
